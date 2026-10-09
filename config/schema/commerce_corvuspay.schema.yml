@@ -7,6 +7,12 @@ commerce_payment.commerce_payment_gateway.plugin.corvuspay:
     secret_key:
       type: string
       label: 'API secret key'
+    api_certificate_path:
+      type: string
+      label: 'Management API certificate path'
+    api_certificate_password:
+      type: string
+      label: 'Management API certificate password'
     currency:
       type: string
       label: 'Settlement currency'
@@ -22,3 +28,6 @@ commerce_payment.commerce_payment_gateway.plugin.corvuspay:
     max_installments:
       type: integer
       label: 'Maximum installment count'
+    save_payment_method_field:
+      type: string
+      label: 'Saved-card consent order field'

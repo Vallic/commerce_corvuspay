@@ -210,16 +210,17 @@ class CorvusPayTest extends OrderKernelTestBase {
   }
 
   /**
-   * Tests checkout cannot accidentally request unsupported preauthorization.
+   * Tests checkout can request preauthorization for later capture or void.
    */
-  public function testCaptureRequired(): void {
+  public function testPreauthorization(): void {
     $payment = Payment::create([
       'amount' => new Price('30', 'USD'),
       'payment_gateway' => $this->gateway,
       'order_id' => $this->order,
     ]);
-    $this->expectException(PaymentGatewayException::class);
-    $this->plugin->prepareRedirect($payment, 'https://shop.example/return', 'https://shop.example/cancel', FALSE);
+    $data = $this->plugin->prepareRedirect($payment, 'https://shop.example/return', 'https://shop.example/cancel', FALSE);
+    $this->assertSame('true', $data['require_complete']);
+    $this->assertSame('new', $payment->getState()->getId());
   }
 
   /**
