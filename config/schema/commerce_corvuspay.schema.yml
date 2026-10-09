@@ -1,0 +1,24 @@
+commerce_payment.commerce_payment_gateway.plugin.corvuspay:
+  type: commerce_payment_gateway_configuration
+  mapping:
+    store_id:
+      type: string
+      label: 'CorvusPay store ID'
+    secret_key:
+      type: string
+      label: 'API secret key'
+    currency:
+      type: string
+      label: 'Settlement currency'
+    installments_mode:
+      type: string
+      label: 'Installments mode'
+    installments:
+      type: integer
+      label: 'Fixed installment count'
+    installments_field:
+      type: string
+      label: 'Order installment field'
+    max_installments:
+      type: integer
+      label: 'Maximum installment count'

@@ -1,0 +1,7 @@
+name: Commerce CorvusPay
+type: module
+description: 'Offsite card payments with CorvusPay, including installments.'
+package: Commerce (contrib)
+core_version_requirement: ^11.4
+dependencies:
+  - commerce:commerce_payment

@@ -1,0 +1,11 @@
+{
+  "name": "drupal/commerce_corvuspay",
+  "description": "CorvusPay offsite payment gateway for Drupal Commerce.",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "require": {
+    "php": ">=8.4",
+    "drupal/core": "^11.4",
+    "drupal/commerce": "^3.1"
+  }
+}
